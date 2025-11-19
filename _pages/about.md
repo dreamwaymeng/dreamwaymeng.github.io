@@ -6,6 +6,8 @@ redirect_from:
   - /about/
   - /about.html
 ---
+
+<!-- ![at_PKU](images/lu_Meng.jpg) -->
 ## Research Interests
 ![word cloud](images/word_cloud.svg)
 
