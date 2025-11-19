@@ -12,3 +12,7 @@ redirect_from:
 
 ## 2025
 TOD...
+
+test attachment
+[attachment](../files/slides1.pdf)
+[attachment](../files/2506.20555v1.pdf)
