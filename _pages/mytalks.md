@@ -11,6 +11,9 @@ redirect_from:
 
 
 ## 2025
+* 2025-11-28: Seminar @IMPCAS, Lanzhou, **Advances in OBE hadronic interactions: Toward higher partial waves, 3-body systems, and beyond** [Slide](../files/LMeng_at_IMPCAS_OBE.pdf)
+* 2025-11-28: Seminar @LZU, Lanzhou, **Unveiling the All-Charmed Tetraquark Spectrum with Deep Neural Networks** [Slides](../files/LZU.pdf)
+* 2025-11-25: FTCF2025 @Huangshan, **Opportunities for detecting the P-wave \\(\bar{D}D^* / \bar{D}^*D\\)  resonance in STCF** [Slides](https://indico.pnp.ustc.edu.cn/event/4580/contributions/30850/)
 * 2025-11-11: Baryons 2025 @Jeju, Korea, **Extracting Hermitian and regular hadron potentials from HAL QCD wave functions** [Slides](https://indico.cern.ch/event/1339154/contributions/6688809/)
 
 * 2025-10-30: Seminar @ HNNU, Changsha, **Advances in OBE hadronic interactions: Toward higher partial waves, 3-body systems, and beyond** [Slides](../files/LMeng_at_HNNU_OBE.pdf)
@@ -27,8 +30,8 @@ redirect_from:
 
 ## 2024
 
-* 2024-08-27: CD24 @ Bochum, Germany, **Left-hand cut problem in lattice QCD and an EFT-based solution** [Slides](https://indico.global/event/12671/contributions/112883/)
+* 2024-08-27: CD24 @ Bochum, Germany, **Left-hand cut problem in lattice QCD and an EFT-based solution** [Slides](https://www.indico.tp2.ruhr-uni-bochum.de/event/2/contributions/71/)
 
-* 2024-08-22: QCHSC2024 @ Cairns, Australia, **Tcc from finite volume energy levels: the left-hand cut problem and its solution** [Slides](https://www.indico.tp2.ruhr-uni-bochum.de/event/2/contributions/71/)
+* 2024-08-22: QCHSC2024 @ Cairns, Australia, **Tcc from finite volume energy levels: the left-hand cut problem and its solution** [Slides](https://indico.global/event/12671/contributions/112883/)
 
 **....**

@@ -28,10 +28,10 @@ See [full_publication_list](https://inspirehep.net/authors/1692520)
 ## Working Experience
 * **2025/7 – present** Southeast University, Associated Professor
 
-* **2020/10 – 2025/6** Ruhr-Universität Bochum, Postdoc (Mentor: E. Epelbaum)
+* **2020/10 – 2025/6** Ruhr-Universität Bochum, Postdoc (Mentor: [E. Epelbaum](https://www.physik.ruhr-uni-bochum.de/en/Professuren/prof-dr-epelbaum-evgeny/))
 
 ## Education
-* **2015/9 – 2020/6** Peking University, Ph.D (Supervisor: Shi-Lin Zhu)
+* **2015/9 – 2020/6** Peking University, Ph.D (Supervisor: [Shi-Lin Zhu](https://faculty.pku.edu.cn/zhushilin/zh_CN/index.htm))
 
 * **2011/9 – 2015/6** Shandong University, B.S.
 

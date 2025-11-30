@@ -29,7 +29,7 @@ main:
   # - title: "CV2"
   #   url: /cv-json/
     
-  # - title: "Guide2"
-  #   url: /markdown/
+  - title: "Guide2"
+    url: /markdown/
 
 
