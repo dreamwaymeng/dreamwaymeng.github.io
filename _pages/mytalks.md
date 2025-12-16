@@ -11,27 +11,29 @@ redirect_from:
 
 
 ## 2025
-* 2025-11-28: Seminar @IMPCAS, Lanzhou, **Advances in OBE hadronic interactions: Toward higher partial waves, 3-body systems, and beyond** [Slide](../files/LMeng_at_IMPCAS_OBE.pdf)
-* 2025-11-28: Seminar @LZU, Lanzhou, **Unveiling the All-Charmed Tetraquark Spectrum with Deep Neural Networks** [Slides](../files/LZU.pdf)
-* 2025-11-25: FTCF2025 @Huangshan, **Opportunities for detecting the P-wave \\(\bar{D}D^* / \bar{D}^*D\\)  resonance in STCF** [Slides](https://indico.pnp.ustc.edu.cn/event/4580/contributions/30850/)
-* 2025-11-11: Baryons 2025 @Jeju, Korea, **Extracting Hermitian and regular hadron potentials from HAL QCD wave functions** [Slides](https://indico.cern.ch/event/1339154/contributions/6688809/)
+* :cn: 2025-11-28: Seminar @IMPCAS, Lanzhou, **Advances in OBE hadronic interactions: Toward higher partial waves, 3-body systems, and beyond** [Slides](../files/LMeng_at_IMPCAS_OBE.pdf)
+* :cn: 2025-11-28: Seminar @LZU, Lanzhou, **Unveiling the All-Charmed Tetraquark Spectrum with Deep Neural Networks** [Slides](../files/LZU.pdf)
+* :cn: 2025-11-25: FTCF2025 @Huangshan, **Opportunities for detecting the P-wave \\(\bar{D}D^* / \bar{D}^*D\\)  resonance in STCF** [Slides](https://indico.pnp.ustc.edu.cn/event/4580/contributions/30850/)
+* :kr: 2025-11-11: Baryons 2025 @Jeju, Korea, **Extracting Hermitian and regular hadron potentials from HAL QCD wave functions** [Slides](https://indico.cern.ch/event/1339154/contributions/6688809/)
 
-* 2025-10-30: Seminar @ HNNU, Changsha, **Advances in OBE hadronic interactions: Toward higher partial waves, 3-body systems, and beyond** [Slides](../files/LMeng_at_HNNU_OBE.pdf)
-
-
-* 2025-10-20: 10th ChEFT workshop, @NJNU, Nanjing, **Application of Effective Field Theory to the Lattice QCD Potential Method** [Slides](https://indico.ihep.ac.cn/event/25378/contributions/204134/)
-
-* 2025-10-10: 5th CLQCD workshop @ IMPCAS, Huizhou, **Extracting Hermitian and regular hadron potentials from HAL QCD wave functions** [Slides](https://indico.itp.ac.cn/event/324/contributions/2065/)
-
-* 2025-09-12: APFB2025 @Ho Chi Minh City, Vitnam,  **DeepQuark: deep-neural-network approach to multiquark bound states** [Slides](../files/Deepquak_APFB2025.pdf)
+* :cn: 2025-10-30: Seminar @ HNNU, Changsha, **Advances in OBE hadronic interactions: Toward higher partial waves, 3-body systems, and beyond** [Slides](../files/LMeng_at_HNNU_OBE.pdf)
 
 
-* 2025-09-05: 119th Hadron Physisc Online Forum, **Quark Models in the Multiquark Era: From the Cornell Potential to Deep Neural Networks** [Slides](https://indico.itp.ac.cn/event/367/)
+* :cn: 2025-10-20: 10th ChEFT workshop, @NJNU, Nanjing, **Application of Effective Field Theory to the Lattice QCD Potential Method** [Slides](https://indico.ihep.ac.cn/event/25378/contributions/204134/)
+
+* :cn: 2025-10-10: 5th CLQCD workshop @ IMPCAS, Huizhou, **Extracting Hermitian and regular hadron potentials from HAL QCD wave functions** [Slides](https://indico.itp.ac.cn/event/324/contributions/2065/)
+
+* 🇻🇳 2025-09-12: APFB2025 @Ho Chi Minh City, Vitnam,  **DeepQuark: deep-neural-network approach to multiquark bound states** [Slides](../files/Deepquak_APFB2025.pdf)
+
+
+* :cn: 2025-09-05: 119th Hadron Physisc Online Forum, **Quark Models in the Multiquark Era: From the Cornell Potential to Deep Neural Networks** [Slides](https://indico.itp.ac.cn/event/367/)
+
+* :cn: 2025-04-26: 第二十届全国中高能核物理大会暨第十四届全国中高能核物理专题研讨会, **Do we still need quark model?** [Slides](https://indico.ihep.ac.cn/event/23976/contributions/185492/)
 
 ## 2024
 
-* 2024-08-27: CD24 @ Bochum, Germany, **Left-hand cut problem in lattice QCD and an EFT-based solution** [Slides](https://www.indico.tp2.ruhr-uni-bochum.de/event/2/contributions/71/)
+* :de: 2024-08-27: CD24 @ Bochum, Germany, **Left-hand cut problem in lattice QCD and an EFT-based solution** [Slides](https://www.indico.tp2.ruhr-uni-bochum.de/event/2/contributions/71/)
 
-* 2024-08-22: QCHSC2024 @ Cairns, Australia, **Tcc from finite volume energy levels: the left-hand cut problem and its solution** [Slides](https://indico.global/event/12671/contributions/112883/)
+* 🇦🇺 2024-08-22: QCHSC2024 @ Cairns, Australia, **Tcc from finite volume energy levels: the left-hand cut problem and its solution** [Slides](https://indico.global/event/12671/contributions/112883/)
 
 **....**

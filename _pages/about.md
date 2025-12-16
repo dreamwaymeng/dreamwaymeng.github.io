@@ -36,8 +36,9 @@ See [full_publication_list](https://inspirehep.net/authors/1692520)
 * **2011/9 – 2015/6** Shandong University, B.S.
 
 ## Honors
+* **2025/12** Chinese Physics C Outstanding Reviewer Awards
 * **2015/10** PKU Outstanding Doctoral Dissertation
 
 
 ## Peer review
-Phys.Rev.Lett., Sci.Bull, Phys.Lett.B, JHEP, Phys.Rev.D, Chin.Phys.C, EPJC, EPJA, Nucl.Phy.B
+Phys.Rev.Lett., Sci.Bull, Phys.Lett.B, JHEP, Phys.Rev.D, Chin.Phys.C, EPJC, EPJA, Chin.Phys.Lett., Nucl.Phy.B
