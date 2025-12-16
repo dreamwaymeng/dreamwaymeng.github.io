@@ -10,6 +10,8 @@
 main:
   # - title: "Publications"
   #   url: /publications/
+  - title: "Group Members"
+    url: /group_members/
 
   - title: "Talks"
     url: /mytalks/    
