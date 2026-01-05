@@ -6,6 +6,12 @@ redirect_from:
   - /about/
   - /about.html
 ---
+## Group openings (annual)
+* 1–2 PhD or Master students
+*  1–2 postdocs
+* Competitive salary
+* Contact me via e-mail if interested
+
 ## Office 
 Rm. N118, Tianjiabing Bldg., Jiulonghu Campus, Southeast University
 
@@ -26,14 +32,16 @@ I have published over 50 papers with citations over 2,000 times(h-index 29),and 
 See [full_publication_list](https://inspirehep.net/authors/1692520)
 
 ## Working Experience
-* **2025/7 – present** Southeast University, Associated Professor
+* **2025/12 – present** Southeast University, Professor
+  
+* **2025/07 – 2025/12** Southeast University, Associated Professor
 
-* **2020/10 – 2025/6** Ruhr-Universität Bochum, Postdoc (Mentor: [E. Epelbaum](https://www.physik.ruhr-uni-bochum.de/en/Professuren/prof-dr-epelbaum-evgeny/))
+* **2020/10 – 2025/06** Ruhr-Universität Bochum, Postdoc (Mentor: [E. Epelbaum](https://www.physik.ruhr-uni-bochum.de/en/Professuren/prof-dr-epelbaum-evgeny/))
 
 ## Education
-* **2015/9 – 2020/6** Peking University, Ph.D (Supervisor: [Shi-Lin Zhu](https://faculty.pku.edu.cn/zhushilin/zh_CN/index.htm))
+* **2015/09 – 2020/06** Peking University, Ph.D (Supervisor: [Shi-Lin Zhu](https://faculty.pku.edu.cn/zhushilin/zh_CN/index.htm))
 
-* **2011/9 – 2015/6** Shandong University, B.S.
+* **2011/09 – 2015/06** Shandong University, B.S.
 
 ## Honors
 * **2025/12** Chinese Physics C Outstanding Reviewer Awards
