@@ -107,4 +107,25 @@ cd ~/projects/academicpages
 bundle exec jekyll serve --livereload --drafts
 ```
 
-你要我帮你写吗？
+## 修复ruby过新的问题
+
+# 安装 rbenv（如果还没有）
+brew install rbenv ruby-build  # macOS
+# 或
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash  # Linux
+
+# 初始化 rbenv
+rbenv init
+# 按照提示将 eval "$(rbenv init - bash)" 添加到 ~/.bashrc 或 ~/.zshrc
+
+# 重新打开终端或执行
+source ~/.bashrc  # 或 source ~/.zshrc
+
+# 安装 Ruby 3.3.0
+rbenv install 3.3.0
+
+# 设置为全局默认版本
+rbenv global 3.3.0
+
+# 验证
+ruby --version  # 应该显示 ruby 3.3.0

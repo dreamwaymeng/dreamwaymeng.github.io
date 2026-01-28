@@ -13,7 +13,7 @@ redirect_from:
 * Contact me via e-mail if interested
 
 ## Office :office:
-Rm. N118, Tianjiabing Bldg., Jiulonghu Campus, Southeast University
+Rm. N114, Tianjiabing Bldg., Jiulonghu Campus, Southeast University
 
 <!-- ![at_PKU](images/lu_Meng.jpg) -->
 ## Research Interests 🧐
@@ -49,6 +49,6 @@ See [full_publication_list](https://inspirehep.net/authors/1692520)
 
 
 ## Peer review ⚖️
-* Phys.Rev.Lett., Phys.Rev.D,
-*  Sci.Bull,  Chin.Phys.C, Chin.Phys.Lett., 
-*  Phys.Lett.B, JHEP,  EPJC, EPJA,  Nucl.Phy.B
+* APS: `Phys.Rev.Lett.`, `Phys.Rev.D`
+* Journal from China: `Sci.Bull`,  `Chin.Phys.C`, `Chin.Phys.Lett.`
+* Others: `Phys.Lett.B`, `JHEP`,  `EPJC`, `EPJA`,  `Nucl.Phy.B`
