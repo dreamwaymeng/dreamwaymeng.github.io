@@ -49,4 +49,6 @@ See [full_publication_list](https://inspirehep.net/authors/1692520)
 
 
 ## Peer review ⚖️
-Phys.Rev.Lett., Sci.Bull, Phys.Lett.B, JHEP, Phys.Rev.D, Chin.Phys.C, EPJC, EPJA, Chin.Phys.Lett., Nucl.Phy.B
+* Phys.Rev.Lett., Phys.Rev.D,
+*  Sci.Bull,  Chin.Phys.C, Chin.Phys.Lett., 
+*  Phys.Lett.B, JHEP,  EPJC, EPJA,  Nucl.Phy.B
