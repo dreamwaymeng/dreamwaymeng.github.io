@@ -3,8 +3,11 @@ permalink: /
 title: "Welcome to Lu Meng's homepage"
 author_profile: true
 redirect_from: 
+  - /en/
   - /about/
   - /about.html
+  - /en/about/
+  - /en/about.html
 ---
 ## Group openings (annual) 📢
 * 1～2 PhD or Master students
