@@ -1,11 +1,13 @@
 ---
-permalink: /zh
+permalink: /about_zh
 lang: zh
 title: "欢迎来到孟璐的主页"
 author_profile: true
 redirect_from: 
+  - /zh/
   - /zh/about/
   - /zh/about.html
+  - 
 ---
 ## 招贤纳士 (每年) 📢
 * 1-2名博士或者硕士研究生

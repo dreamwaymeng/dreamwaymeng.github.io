@@ -12,7 +12,7 @@ main:
     url: /about/
 
   - title: "关于我"
-    url: /zh/
+    url: /about_zh/
 
   - title: "Group Members"
     url: /group_members/
