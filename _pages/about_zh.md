@@ -1,5 +1,5 @@
 ---
-permalink: /about_zh
+permalink: /about_zh/
 lang: zh
 title: "欢迎来到孟璐的主页"
 author_profile: true
