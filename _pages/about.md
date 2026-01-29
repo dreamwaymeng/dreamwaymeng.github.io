@@ -7,8 +7,8 @@ redirect_from:
   - /about.html
 ---
 ## Group openings (annual) 📢
-* 1–2 PhD or Master students
-*  1–2 postdocs
+* 1～2 PhD or Master students
+*  1～2 postdocs
 * Competitive salary
 * Contact me via e-mail if interested
 

@@ -99,6 +99,8 @@ redirect_from:
   
 * :cn: 2021-11-17, CD21 (online) @Beijing, **Two-particle scattering from finite-volume quantization conditions using the plane wave basis** [Slides](https://indico.ihep.ac.cn/event/14770/contributions/33221/)
 
+* :cn: 2021-08-25: 30th Hadron Physisc Online Forum, **Two-particle scattering from finite-volume quantization conditions using the plane wave basis** [Slides](https://indico.itp.ac.cn/event/102/)
+
 * 🇲🇽 2021-07-29, Hadron2021 (online) @Mexico City, **Are the Zcs(3985) and Zcs(4000) the same state?** [Slides](https://indico.nucleares.unam.mx/event/1541/session/50/contribution/160/)
 
 * :us: 2021-07-21, Lattice2021 (online) @MIT, **Quantization conditions in the finite volume within the plane wave basis expansio** [Slides](https://indico.cern.ch/event/1006302/contributions/4373306/)
