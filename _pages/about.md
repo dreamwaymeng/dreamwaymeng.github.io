@@ -53,5 +53,5 @@ See [full_publication_list](https://inspirehep.net/authors/1692520)
 
 ## Peer review ⚖️
 * APS: `Phys.Rev.Lett.`, `Phys.Rev.D`
-* Journal from China: `Sci.Bull`,  `Chin.Phys.C`, `Chin.Phys.Lett.`
-* Others: `Phys.Lett.B`, `JHEP`,  `EPJC`, `EPJA`,  `Nucl.Phy.B`
+* Journal from China: `Sci.Bull`,  `Chin.Phys.C`, `Chin.Phys.Lett.`, `Commun.Theor.Phys.`, `Chin.J.Phys.`
+* Others: `Phys.Lett.B`, `JHEP`,  `EPJC`, `EPJA`,  `Nucl.Phy.B`,  `Nucl.Phy.A`

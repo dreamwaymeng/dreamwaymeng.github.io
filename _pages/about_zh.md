@@ -12,8 +12,8 @@ redirect_from:
 ## 招贤纳士 (每年) 📢
 * 1-2名博士或者硕士研究生
 * 1-2名博士后
-* 无论你是擅长理论推导、模型构建还是数值计算，都可以找到有趣的课题，获得有力的支持
-* 如果你什么都不擅长，但是依旧对于科研抱有兴趣，也欢迎你来碰碰运气！
+* 无论你是擅长理论推导、模型构建还是数值计算，都可以找到有**趣的课题**，获得**有力的支持**
+* 如果你什么都不擅长，但是依旧对于科研抱有**兴趣**，也欢迎你来碰碰运气！
 
 
 ## 办公地址 :office:
@@ -58,5 +58,5 @@ redirect_from:
 
 ## 同行评议 ⚖️
 * APS系列: `Phys.Rev.Lett.`, `Phys.Rev.D`
-* 中国杂志: `Sci.Bull`,  `Chin.Phys.C`, `Chin.Phys.Lett.`
-* 其它: `Phys.Lett.B`, `JHEP`,  `EPJC`, `EPJA`,  `Nucl.Phy.B`
+* 中国杂志: `Sci.Bull`,  `Chin.Phys.C`, `Chin.Phys.Lett.`, `Commun.Theor.Phys.`, `Chin.J.Phys.`
+* 其它: `Phys.Lett.B`, `JHEP`,  `EPJC`, `EPJA`,  `Nucl.Phy.B`,  `Nucl.Phy.A`
