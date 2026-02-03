@@ -9,9 +9,12 @@
   console.log('[INSPIRE Citations] Script loaded');
 
   // Configuration
-  const CACHE_KEY = 'inspire_citations_cache_v3';
+  const CACHE_KEY = 'inspire_citations_cache_v6';
   const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
   const API_BASE = 'https://inspirehep.net/api/literature';
+  const AUTHOR_BAI = 'Lu.Meng.1';
+  const AUTHOR_ID = '1692520';
+  const AUTHOR_URL = `https://inspirehep.net/authors/${AUTHOR_ID}`;
 
   // Translation labels
   const TRANSLATIONS = {
@@ -27,12 +30,15 @@
       physRept: 'Phys.Rept.',
       sciBull: 'Sci.Bull.',
       jhep: 'JHEP',
-      dataSource: 'Data from INSPIREHEP',
+      dataSource: 'Data from',
+      inspireLink: 'INSPIREHEP',
       lastUpdated: 'Updated',
       refresh: 'Refresh',
       loading: 'Loading citation data...',
       errorMsg: 'Unable to load citation data. Please visit the full publication list.',
-      retry: 'Retry'
+      retry: 'Retry',
+      citable: 'Citable',
+      published: 'Published'
     },
     zh: {
       papers: '论文',
@@ -46,14 +52,20 @@
       physRept: 'Phys.Rept.',
       sciBull: 'Sci.Bull.',
       jhep: 'JHEP',
-      dataSource: '数据来自INSPIREHEP',
+      dataSource: '数据来自',
+      inspireLink: 'INSPIREHEP',
       lastUpdated: '更新',
       refresh: '刷新',
       loading: '正在加载引用数据...',
       errorMsg: '无法加载引用数据，请访问完整论文列表。',
-      retry: '重试'
+      retry: '重试',
+      citable: '可引用',
+      published: '已发表'
     }
   };
+
+  // Track current mode per container
+  const containerModes = new WeakMap();
 
   /**
    * Format number with thousand separators
@@ -102,29 +114,8 @@
   }
 
   /**
-   * Check if paper is published
-   */
-  function isPublished(pub) {
-    const metadata = pub.metadata;
-
-    // Must be citeable
-    if (!metadata.citeable) {
-      return false;
-    }
-
-    // Must have publication info
-    if (!metadata.publication_info || metadata.publication_info.length === 0) {
-      return false;
-    }
-
-    // Check if any publication_info entry has material="publication"
-    return metadata.publication_info.some(info =>
-      info.material === 'publication'
-    );
-  }
-
-  /**
    * Get journal title from publication
+   * Handles cases where journal_title and material="publication" may be in different entries
    */
   function getJournalTitle(pub) {
     const pubInfo = pub.metadata.publication_info;
@@ -132,12 +123,29 @@
       return null;
     }
 
-    // Try to find publication entry first, otherwise use first entry with journal_title
-    let publication = pubInfo.find(info => info.material === 'publication');
-    if (!publication) {
-      publication = pubInfo.find(info => info.journal_title);
+    // First, try to find an entry with BOTH material="publication" AND journal_title
+    let publication = pubInfo.find(info =>
+      info.material === 'publication' && info.journal_title
+    );
+
+    if (publication) {
+      return publication.journal_title;
     }
-    return publication ? publication.journal_title : null;
+
+    // If not found, check if there's an entry with material="publication"
+    // and get journal_title from any other entry
+    const hasPublication = pubInfo.some(info => info.material === 'publication');
+    if (hasPublication) {
+      // Find any entry with journal_title
+      const entryWithJournal = pubInfo.find(info => info.journal_title);
+      if (entryWithJournal) {
+        return entryWithJournal.journal_title;
+      }
+    }
+
+    // Fallback: return first entry with journal_title
+    const fallback = pubInfo.find(info => info.journal_title);
+    return fallback ? fallback.journal_title : null;
   }
 
   /**
@@ -166,7 +174,7 @@
         counts.physRept++;
       } else if (journalLower.includes('sci.bull')) {
         counts.sciBull++;
-      } else if (journalLower === 'jhep') {
+      } else if (journalLower === 'jhep' || journalLower.includes('j.high energy phys')) {
         counts.jhep++;
       }
     });
@@ -175,14 +183,22 @@
   }
 
   /**
-   * Fetch publications from INSPIRE-HEP API
+   * Fetch publications from INSPIRE-HEP API with optional type filter
+   * @param {string} typeFilter - 'citable' or 'published'
    */
-  async function fetchPublications(authorId) {
-    // Construct API URL using BAI (author identifier)
-    const bai = 'Lu.Meng.1'; // BAI for author ID 1692520
+  async function fetchPublications(typeFilter) {
     const fields = 'citation_count,citation_count_without_self_citations,publication_info,citeable';
-    const size = 250; // Ensure we get all publications
-    const query = `a ${bai}`;
+    const size = 250;
+
+    // Build query based on filter type
+    let query;
+    if (typeFilter === 'published') {
+      query = `a ${AUTHOR_BAI} AND tc published`;
+    } else {
+      // citable - use tc citeable to match INSPIRE-HEP's definition
+      query = `a ${AUTHOR_BAI} AND tc citeable`;
+    }
+
     const url = `${API_BASE}?q=${encodeURIComponent(query)}&size=${size}&fields=${fields}`;
 
     const response = await fetch(url);
@@ -191,14 +207,13 @@
     }
 
     const data = await response.json();
-    return data.hits.hits; // Array of publication records
+    return data.hits.hits;
   }
 
   /**
    * Calculate metrics from publication data
    */
-  function calculateMetrics(publications) {
-    // Use all publications (not filtering for published only)
+  function calculateMetricsFromPublications(publications) {
     const citationCounts = [];
     let totalCitations = 0;
     let totalCitationsWithoutSelf = 0;
@@ -229,7 +244,23 @@
       citationsPerPaper: citationsPerPaper,
       hIndex: calculateHIndex(citationCounts),
       highlyCitedCount: highlyCitedCount,
-      topJournals: topJournals,
+      topJournals: topJournals
+    };
+  }
+
+  /**
+   * Fetch and calculate metrics for both modes
+   */
+  async function fetchAllMetrics() {
+    // Fetch both citable and published papers in parallel
+    const [citablePubs, publishedPubs] = await Promise.all([
+      fetchPublications('citable'),
+      fetchPublications('published')
+    ]);
+
+    return {
+      citable: calculateMetricsFromPublications(citablePubs),
+      published: calculateMetricsFromPublications(publishedPubs),
       timestamp: Date.now()
     };
   }
@@ -268,23 +299,30 @@
   /**
    * Render citation summary HTML
    */
-  function renderSummary(metrics, lang, container) {
+  function renderSummary(metrics, lang, container, mode) {
     const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
     const updateDate = formatDate(new Date(metrics.timestamp), lang);
 
+    // Get metrics for current mode
+    const modeMetrics = metrics[mode] || metrics.citable || metrics;
+
     // Provide defaults for backward compatibility with old cached data
-    const citationsPerPaper = metrics.citationsPerPaper || 0;
-    const topJournals = metrics.topJournals || { prl: 0, prd: 0, physRept: 0, sciBull: 0, jhep: 0 };
+    const citationsPerPaper = modeMetrics.citationsPerPaper || 0;
+    const topJournals = modeMetrics.topJournals || { prl: 0, prd: 0, physRept: 0, sciBull: 0, jhep: 0 };
 
     const html = `
       <div class="citations-summary">
+        <div class="citations-mode-switch">
+          <button class="mode-btn ${mode === 'citable' ? 'active' : ''}" data-mode="citable">${t.citable}</button>
+          <button class="mode-btn ${mode === 'published' ? 'active' : ''}" data-mode="published">${t.published}</button>
+        </div>
         <div class="citations-grid">
           <div class="citation-stat">
-            <span class="stat-value">${formatNumber(metrics.totalPapers)}</span>
+            <span class="stat-value">${formatNumber(modeMetrics.totalPapers)}</span>
             <span class="stat-label">${t.papers}</span>
           </div>
           <div class="citation-stat">
-            <span class="stat-value">${formatNumber(metrics.totalCitations)}</span>
+            <span class="stat-value">${formatNumber(modeMetrics.totalCitations)}</span>
             <span class="stat-label">${t.citations}</span>
           </div>
           <div class="citation-stat">
@@ -292,11 +330,11 @@
             <span class="stat-label">${t.citationsPerPaper}</span>
           </div>
           <div class="citation-stat">
-            <span class="stat-value">${formatNumber(metrics.hIndex)}</span>
+            <span class="stat-value">${formatNumber(modeMetrics.hIndex)}</span>
             <span class="stat-label">${t.hindex}</span>
           </div>
           <div class="citation-stat">
-            <span class="stat-value">${formatNumber(metrics.highlyCitedCount)}</span>
+            <span class="stat-value">${formatNumber(modeMetrics.highlyCitedCount)}</span>
             <span class="stat-label">${t.highlyCited}</span>
           </div>
           <div class="citation-stat citation-stat-journals">
@@ -311,12 +349,26 @@
           </div>
         </div>
         <div class="citations-footer">
-          <small>${t.dataSource} | ${t.lastUpdated}: ${updateDate} | <a href="#" class="citations-refresh">${t.refresh}</a></small>
+          <small>${t.dataSource} <a href="${AUTHOR_URL}" target="_blank" rel="noopener">${t.inspireLink}</a> | ${t.lastUpdated}: ${updateDate} | <a href="#" class="citations-refresh">${t.refresh}</a></small>
         </div>
       </div>
     `;
 
     container.innerHTML = html;
+
+    // Store metrics in container for mode switching
+    container._citationsMetrics = metrics;
+
+    // Add mode switch click handlers
+    const modeButtons = container.querySelectorAll('.mode-btn');
+    modeButtons.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const newMode = this.getAttribute('data-mode');
+        containerModes.set(container, newMode);
+        renderSummary(metrics, lang, container, newMode);
+      });
+    });
 
     // Add refresh click handler
     const refreshLink = container.querySelector('.citations-refresh');
@@ -366,14 +418,18 @@
    * Main function to load and display citations
    */
   async function loadCitations(container, forceRefresh) {
-    const authorId = container.getAttribute('data-author-id');
     const lang = container.getAttribute('data-lang') || 'en';
+    const defaultMode = container.getAttribute('data-mode') || 'citable';
+
+    // Get current mode or use default
+    let mode = containerModes.get(container) || defaultMode;
+    containerModes.set(container, mode);
 
     // Try to use cached data first (unless forcing refresh)
     if (!forceRefresh) {
       const cached = getCachedData();
       if (cached) {
-        renderSummary(cached, lang, container);
+        renderSummary(cached, lang, container, mode);
         return;
       }
     }
@@ -382,22 +438,21 @@
     renderLoading(lang, container);
 
     try {
-      // Fetch fresh data from API
-      const publications = await fetchPublications(authorId);
-      const metrics = calculateMetrics(publications);
+      // Fetch fresh data from API for both modes
+      const metrics = await fetchAllMetrics();
 
       // Cache the results
       setCachedData(metrics);
 
       // Render the summary
-      renderSummary(metrics, lang, container);
+      renderSummary(metrics, lang, container, mode);
     } catch (error) {
       console.error('Error fetching citations:', error);
 
       // Try to use stale cache as fallback
       const staleCache = getCachedData();
       if (staleCache && !forceRefresh) {
-        renderSummary(staleCache, lang, container);
+        renderSummary(staleCache, lang, container, mode);
       } else {
         renderError(lang, container);
       }

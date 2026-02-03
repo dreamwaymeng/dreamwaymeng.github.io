@@ -8,6 +8,45 @@
   margin: 1em 0;
 }
 
+/* Mode Switch Toggle */
+.citations-mode-switch {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 1rem;
+}
+
+.mode-btn {
+  padding: 0.4rem 1rem;
+  font-size: 0.85em;
+  font-weight: 500;
+  border: 1px solid var(--global-border-color);
+  background-color: var(--global-bg-color);
+  color: var(--global-text-color-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:first-child {
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+  }
+
+  &:last-child {
+    border-radius: 0 4px 4px 0;
+  }
+
+  &:hover:not(.active) {
+    background-color: var(--global-bg-color);
+    color: var(--global-text-color);
+  }
+
+  &.active {
+    background-color: var(--global-link-color);
+    border-color: var(--global-link-color);
+    color: #fff;
+  }
+}
+
 /* Citation Grid Layout */
 .citations-grid {
   display: grid;
