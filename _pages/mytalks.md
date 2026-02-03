@@ -11,6 +11,10 @@ redirect_from:
 
 ## 2026 🐴
 
+* :cn: 2026-02-03: 味物理讲座100期特别活动 @Sanya, **From the Cornell model to the DeepQuark** [Slides](https://indico.ihep.ac.cn/event/27733/contributions/210970/)
+* 
+
+
 * :cn: 2026-01-21: 3rd 核结构与反应少体研讨会 @IMP-CAS, Huizhou, **Extracting hadronic interaction from the lattice QCD raw data** [Slides](../files//2026/HuiZhou_Cfewbody2026.pdf)
 
 ## 2025 🐍
