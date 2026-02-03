@@ -33,7 +33,7 @@ redirect_from:
 自博士起一直从事强子物理的研究，重点关注奇特强子态，如四夸克态和五夸克态，致力于揭示这些奇特态出现的模式以加深对于量子色动力学（QCD）非微扰性质的理解，如手征对称性自发破缺和色禁闭。尽管从事理论研究，但我注重结合最新的实验结果（来自北京正负电子对撞机或欧洲核子中心的大型强子对撞机等）以及格点QCD（在离散时空点上求解QCD的数值方法）的进展。近年来，我也开始应用一些深度学习的方法（AI4Science）。 
 
 ## 论文发表 📑
-<div id="inspire-citations" data-author-id="1692520" data-lang="zh"></div>
+<div id="inspire-citations" data-author-id="1692520" data-lang="zh" data-citations-by-year='{{ site.data.citations_by_year.citations | jsonify }}'></div>
 
 [完整论文列表](https://inspirehep.net/authors/1692520)
 

@@ -9,7 +9,7 @@
   console.log('[INSPIRE Citations] Script loaded');
 
   // Configuration
-  const CACHE_KEY = 'inspire_citations_cache_v6';
+  const CACHE_KEY = 'inspire_citations_cache_v7';
   const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
   const API_BASE = 'https://inspirehep.net/api/literature';
   const AUTHOR_BAI = 'Lu.Meng.1';
@@ -38,7 +38,9 @@
       errorMsg: 'Unable to load citation data. Please visit the full publication list.',
       retry: 'Retry',
       citable: 'Citable',
-      published: 'Published'
+      published: 'Published',
+      citationsPerYear: 'Citations per Year',
+      googleScholar: 'Google Scholar'
     },
     zh: {
       papers: '论文',
@@ -60,7 +62,9 @@
       errorMsg: '无法加载引用数据，请访问完整论文列表。',
       retry: '重试',
       citable: '可引用',
-      published: '已发表'
+      published: '已发表',
+      citationsPerYear: '年度引用',
+      googleScholar: 'Google Scholar'
     }
   };
 
@@ -91,6 +95,61 @@
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
     const locale = lang === 'zh' ? 'zh-CN' : 'en-US';
     return date.toLocaleDateString(locale, options);
+  }
+
+  /**
+   * Render citations per year histogram
+   * @param {Object} citationsByYear - Object with year keys and citation count values
+   * @param {string} lang - Language code ('en' or 'zh')
+   * @returns {string} HTML string for the histogram
+   */
+  function renderHistogram(citationsByYear, lang) {
+    const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+
+    if (!citationsByYear || Object.keys(citationsByYear).length === 0) {
+      return '';
+    }
+
+    // Sort years and get last 8 years
+    const years = Object.keys(citationsByYear)
+      .map(y => parseInt(y))
+      .sort((a, b) => a - b)
+      .slice(-8);
+
+    if (years.length === 0) {
+      return '';
+    }
+
+    // Find max value for scaling
+    const maxCitations = Math.max(...years.map(y => citationsByYear[y] || 0));
+
+    // Generate bar HTML - citation count on top, year at bottom
+    const barsHtml = years.map(year => {
+      const count = citationsByYear[year] || 0;
+      const heightPercent = maxCitations > 0 ? (count / maxCitations) * 100 : 0;
+
+      return `
+        <div class="histogram-bar-container">
+          <span class="histogram-count">${formatNumber(count)}</span>
+          <div class="histogram-bar-wrapper">
+            <div class="histogram-bar" style="height: ${heightPercent}%"></div>
+          </div>
+          <span class="histogram-year">${year}</span>
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <div class="citations-histogram">
+        <div class="histogram-header">
+          <span class="histogram-title">${t.citationsPerYear}</span>
+          <span class="histogram-source">${t.googleScholar}</span>
+        </div>
+        <div class="histogram-chart">
+          ${barsHtml}
+        </div>
+      </div>
+    `;
   }
 
   /**
@@ -310,6 +369,20 @@
     const citationsPerPaper = modeMetrics.citationsPerPaper || 0;
     const topJournals = modeMetrics.topJournals || { prl: 0, prd: 0, physRept: 0, sciBull: 0, jhep: 0 };
 
+    // Parse citations by year data from container attribute
+    let citationsByYear = null;
+    const citationsByYearAttr = container.getAttribute('data-citations-by-year');
+    if (citationsByYearAttr) {
+      try {
+        citationsByYear = JSON.parse(citationsByYearAttr);
+      } catch (e) {
+        console.error('[INSPIRE Citations] Error parsing citations by year:', e);
+      }
+    }
+
+    // Generate histogram HTML if data available
+    const histogramHtml = renderHistogram(citationsByYear, lang);
+
     const html = `
       <div class="citations-summary">
         <div class="citations-mode-switch">
@@ -351,6 +424,7 @@
         <div class="citations-footer">
           <small>${t.dataSource} <a href="${AUTHOR_URL}" target="_blank" rel="noopener">${t.inspireLink}</a> | ${t.lastUpdated}: ${updateDate} | <a href="#" class="citations-refresh">${t.refresh}</a></small>
         </div>
+        ${histogramHtml}
       </div>
     `;
 

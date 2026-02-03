@@ -167,6 +167,112 @@
   }
 }
 
+/* Citations Per Year Histogram */
+.citations-histogram {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: var(--global-bg-color);
+  border: 1px solid var(--global-border-color);
+  border-radius: 6px;
+}
+
+.histogram-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0 0.25rem;
+}
+
+.histogram-title {
+  font-size: 0.85em;
+  font-weight: 500;
+  color: var(--global-text-color-light);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.histogram-source {
+  font-size: 0.75em;
+  color: var(--global-text-color-light);
+  font-style: italic;
+}
+
+.histogram-chart {
+  display: flex;
+  justify-content: space-around;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+
+  @media (max-width: 480px) {
+    gap: 0.25rem;
+    padding: 0;
+  }
+}
+
+.histogram-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  max-width: 70px;
+
+  @media (max-width: 480px) {
+    max-width: 45px;
+  }
+}
+
+.histogram-count {
+  font-size: 0.7em;
+  font-weight: 600;
+  color: var(--global-text-color);
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+  height: 1.2em;
+  line-height: 1.2em;
+
+  @media (max-width: 480px) {
+    font-size: 0.6em;
+  }
+}
+
+.histogram-bar-wrapper {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: flex-end;
+
+  @media (max-width: 480px) {
+    height: 60px;
+  }
+}
+
+.histogram-bar {
+  width: 100%;
+  min-height: 4px;
+  background: var(--global-link-color);
+  border-radius: 3px 3px 0 0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+}
+
+.histogram-year {
+  font-size: 0.75em;
+  color: var(--global-text-color-light);
+  margin-top: 0.4rem;
+  font-weight: 500;
+  height: 1.2em;
+  line-height: 1.2em;
+
+  @media (max-width: 480px) {
+    font-size: 0.65em;
+    margin-top: 0.25rem;
+  }
+}
+
 /* Citations Footer */
 .citations-footer {
   text-align: center;
