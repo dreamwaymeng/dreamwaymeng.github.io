@@ -52,7 +52,7 @@ redirect_from:
       <font size="4" face="Arial" color="#0066cc"><b>Kai-Kai Zhang (张凯凯)</b></font>
       <br><br>
       <font size="3" face="Arial">
-      <b>Interests:</b> Exotic hadronic states, Hadron interactions
+      <b>Interests:</b> Exotic hadrons, Hadron interactions
       <br><br>
       <b>Email:</b> <a href="mailto:zh.2k@outlook.com">zh.2k@outlook.com</a>
       <br><br>
@@ -78,7 +78,7 @@ redirect_from:
       <font size="4" face="Arial" color="#0066cc"><b>Yu-Yue Cui (崔雨月)</b></font>
       <br><br>
       <font size="3" face="Arial">
-      <b>Interests:</b> Hadronic molecular states, Hadron spectroscopy
+      <b>Interests:</b> Hadronic molecules, Hadron spectroscopy
       <br><br>
       <b>Email:</b> <a href="mailto:202320112301@hunnu.edu.cn">202320112301@hunnu.edu.cn</a>
       <br><br>
