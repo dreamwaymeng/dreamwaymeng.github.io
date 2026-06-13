@@ -7,9 +7,10 @@ Personal academic website for Lu Meng (孟璐), a hadron physics researcher at S
 ## Features
 
 - Bilingual support (English/Chinese)
-- Dynamic citation statistics from INSPIRE-HEP API
-- Sections for research, group members, talks, teaching, and photos
-- Responsive design
+- Dynamic citation statistics from INSPIRE-HEP API, with a citations-per-year histogram
+- Content sections: About/Research, Group Members, Talks, Seminar Notices, Teaching, and Photos
+- "Useful Links" quick links in the sidebar author profile (configured in `_config.yml`)
+- Responsive, mobile-friendly design (e.g. the Group Members cards reflow on phones)
 
 ## Local Development
 
@@ -54,22 +55,32 @@ npm run watch:js
 
 ## Project Structure
 
+Most content lives as Markdown pages under `_pages/` (this site does not use
+separate `_talks/`, `_teaching/`, or `_publications/` collection folders).
+
 ```
-├── _config.yml          # Jekyll configuration
-├── _data/               # YAML/JSON data files
-│   ├── navigation.yml   # Header menu structure
-│   ├── ui-text.yml      # Multilingual UI strings
-│   └── cv.json          # Structured CV data
-├── _includes/           # Reusable HTML components
-├── _layouts/            # Page templates
-├── _pages/              # Main site pages
-├── _sass/               # SCSS stylesheets
-├── _talks/              # Conference presentations
-├── _teaching/           # Teaching materials
-├── _publications/       # Academic papers
-├── assets/              # Static files (CSS, JS, images)
-├── files/               # Downloadable files (PDFs)
-└── images/              # Image assets
+├── _config.yml              # Jekyll config & author profile (incl. sidebar "Useful Links")
+├── _data/
+│   ├── authors.yml          # Author metadata
+│   ├── navigation.yml       # Header menu structure
+│   ├── ui-text.yml          # Multilingual UI strings
+│   ├── citations_by_year.yml# Citation-per-year histogram data
+│   └── cv.json              # Structured CV data
+├── _includes/               # Reusable HTML components (author-profile, header, footer, …)
+├── _layouts/                # Page templates
+├── _pages/                  # Site pages (each a Markdown page)
+│   ├── about.md / about_zh.md   # Homepage (EN) / Chinese homepage
+│   ├── group_members.md         # Group members (responsive cards)
+│   ├── mytalks.md               # Talks and presentations
+│   ├── seminars.md              # Seminar Notices (invited seminars, by year)
+│   ├── myteaching.md            # Teaching
+│   └── photos.md                # Photos
+├── _sass/                   # SCSS stylesheets
+│   └── layout/              # incl. _group-members.scss, _citations.scss, _sidebar.scss
+├── assets/                  # Static files (CSS, JS)
+├── files/                   # Downloadable files (PDFs, slides), organized by year
+└── images/                  # Image assets
+    └── seminar/             # Seminar posters
 ```
 
 ## Deployment
