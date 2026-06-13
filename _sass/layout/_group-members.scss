@@ -2,7 +2,8 @@
    Group Members cards
    Responsive replacement for the old fixed-width <table> layout.
    Desktop: photo left, text right (matches the previous look).
-   Phones (<= 600px): photo centered on top, details stacked below.
+   Phones (<= 600px): keep photo left / text right, but shrink the photo
+   so the text column still fits.
    ========================================================================== */
 
 .member-card {
@@ -13,9 +14,7 @@
   margin: 1.5em 0;
 
   @media (max-width: 600px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75em;
+    gap: 1em;
   }
 }
 
@@ -25,7 +24,7 @@
   text-align: center;
 
   @media (max-width: 600px) {
-    width: auto;
+    width: 100px;
   }
 }
 
@@ -35,6 +34,11 @@
   object-fit: cover;
   border: 1px solid var(--global-border-color, #ccc);
   display: inline-block;
+
+  @media (max-width: 600px) {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 .member-card__role {
@@ -42,15 +46,15 @@
   font-family: Arial, sans-serif;
   font-size: 1.1em;
   font-weight: bold;
+
+  @media (max-width: 600px) {
+    font-size: 0.95em;
+  }
 }
 
 .member-card__body {
   flex: 1 1 auto;
   min-width: 0; /* allow long emails/addresses to wrap inside flex */
-
-  @media (max-width: 600px) {
-    width: 100%;
-  }
 }
 
 .member-card__name {
@@ -59,6 +63,10 @@
   font-weight: bold;
   color: #0066cc;
   margin-bottom: 0.5em;
+
+  @media (max-width: 600px) {
+    font-size: 1.1em;
+  }
 }
 
 .member-card__info {
@@ -66,4 +74,8 @@
   font-size: 1em;
   margin: 0.4em 0;
   word-break: break-word;
+
+  @media (max-width: 600px) {
+    font-size: 0.9em;
+  }
 }
