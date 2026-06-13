@@ -18,6 +18,16 @@
   }
 }
 
+/* subtle divider between consecutive members (not before the first) */
+.member-card + .member-card {
+  border-top: 1px solid var(--global-border-color, #e0e0e0);
+  padding-top: 1.5em;
+
+  @media (max-width: 600px) {
+    padding-top: 1em;
+  }
+}
+
 .member-card__media {
   flex-shrink: 0;
   width: 180px;
@@ -30,14 +40,12 @@
 
 .member-card__photo {
   width: 140px;
-  height: 140px;
-  object-fit: cover;
+  height: auto;
   border: 1px solid var(--global-border-color, #ccc);
   display: inline-block;
 
   @media (max-width: 600px) {
     width: 90px;
-    height: 90px;
   }
 }
 
