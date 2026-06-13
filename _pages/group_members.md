@@ -13,82 +13,49 @@ redirect_from:
 
 
 
-<table border="0" cellpadding="15" cellspacing="0" width="100%">
-  <tr>
-    <!-- 左侧照片区域 -->
-    <td width="220" valign="top" align="center">
-      <img src="../images/linzy.jpg" width="140" height="140" border="1" >
-      <br><br>
-      <font size="4" face="Arial" ><b>Postdoc</b></font>
-    </td>
-    <!-- 右侧文字区域 -->
-    <td valign="top">
-      <font size="4" face="Arial" color="#0066cc"><b>Zi-Yang Lin (林子阳)</b></font>
-      <br><br>
-      <font size="3" face="Arial">
-      <b>Interests:</b> Effective field theory, Scattering theory, Exotic hadrons, Few-body system
-      <br><br>
-      <b>Email:</b> <a href="mailto:linzy@seu.edu.cn">linzy@seu.edu.cn</a>
-      <br><br>
-      <b>Office:</b> Tianjiabing Bld. Rm. N116
-      <br><br>
-       PhD in Peking University
-      </font>
-    </td>
-  </tr>
-</table>
+<div class="member-card">
+  <div class="member-card__media">
+    <img class="member-card__photo" src="../images/linzy.jpg" alt="Zi-Yang Lin">
+    <div class="member-card__role">Postdoc</div>
+  </div>
+  <div class="member-card__body">
+    <div class="member-card__name">Zi-Yang Lin (林子阳)</div>
+    <p class="member-card__info"><b>Interests:</b> Effective field theory, Scattering theory, Exotic hadrons, Few-body system</p>
+    <p class="member-card__info"><b>Email:</b> <a href="mailto:linzy@seu.edu.cn">linzy@seu.edu.cn</a></p>
+    <p class="member-card__info"><b>Office:</b> Tianjiabing Bld. Rm. N116</p>
+    <p class="member-card__info">PhD in Peking University</p>
+  </div>
+</div>
 
 
-<table border="0" cellpadding="15" cellspacing="0" width="100%">
-  <tr>
-    <!-- 左侧照片区域 -->
-    <td width="220" valign="top" align="center">
-      <img src="../images/zhangkk.jpg" width="140" height="140" border="1" >
-      <br><br>
-      <font size="4" face="Arial" ><b>PhD student</b></font>
-    </td>
-    <!-- 右侧文字区域 -->
-    <td valign="top">
-      <font size="4" face="Arial" color="#0066cc"><b>Kai-Kai Zhang (张凯凯)</b></font>
-      <br><br>
-      <font size="3" face="Arial">
-      <b>Interests:</b> Exotic hadrons, Hadron interactions
-      <br><br>
-      <b>Email:</b> <a href="mailto:zh.2k@outlook.com">zh.2k@outlook.com</a>
-      <br><br>
-      <b>Office:</b> Changzhou Sci-Tech Bld. Rm. 302, Jiulonghu Campus, SEU
-      <br><br>
-       Master in Northwest Normal University
-      </font>
-    </td>
-  </tr>
-</table>
+<div class="member-card">
+  <div class="member-card__media">
+    <img class="member-card__photo" src="../images/zhangkk.jpg" alt="Kai-Kai Zhang">
+    <div class="member-card__role">PhD student</div>
+  </div>
+  <div class="member-card__body">
+    <div class="member-card__name">Kai-Kai Zhang (张凯凯)</div>
+    <p class="member-card__info"><b>Interests:</b> Exotic hadrons, Hadron interactions</p>
+    <p class="member-card__info"><b>Email:</b> <a href="mailto:zh.2k@outlook.com">zh.2k@outlook.com</a></p>
+    <p class="member-card__info"><b>Office:</b> Changzhou Sci-Tech Bld. Rm. 302, Jiulonghu Campus, SEU</p>
+    <p class="member-card__info">Master in Northwest Normal University</p>
+  </div>
+</div>
 
 
-<table border="0" cellpadding="15" cellspacing="0" width="100%">
-  <tr>
-    <!-- 左侧照片区域 -->
-    <td width="220" valign="top" align="center">
-      <img src="../images/cuiyy.jpg" width="140" height="140" border="1" >
-      <br><br>
-      <font size="4" face="Arial" ><b>PhD student</b></font>
-    </td>
-    <!-- 右侧文字区域 -->
-    <td valign="top">
-      <font size="4" face="Arial" color="#0066cc"><b>Yu-Yue Cui (崔雨月)</b></font>
-      <br><br>
-      <font size="3" face="Arial">
-      <b>Interests:</b> Hadronic molecules, Hadron spectroscopy
-      <br><br>
-      <b>Email:</b> <a href="mailto:202320112301@hunnu.edu.cn">202320112301@hunnu.edu.cn</a>
-      <br><br>
-      <b>Office:</b> Tianjiabing Bld. Rm. xxx
-      <br><br>
-       Master in Hunan Normal University
-      </font>
-    </td>
-  </tr>
-</table>
+<div class="member-card">
+  <div class="member-card__media">
+    <img class="member-card__photo" src="../images/cuiyy.jpg" alt="Yu-Yue Cui">
+    <div class="member-card__role">PhD student</div>
+  </div>
+  <div class="member-card__body">
+    <div class="member-card__name">Yu-Yue Cui (崔雨月)</div>
+    <p class="member-card__info"><b>Interests:</b> Hadronic molecules, Hadron spectroscopy</p>
+    <p class="member-card__info"><b>Email:</b> <a href="mailto:202320112301@hunnu.edu.cn">202320112301@hunnu.edu.cn</a></p>
+    <p class="member-card__info"><b>Office:</b> Tianjiabing Bld. Rm. xxx</p>
+    <p class="member-card__info">Master in Hunan Normal University</p>
+  </div>
+</div>
 
 
 

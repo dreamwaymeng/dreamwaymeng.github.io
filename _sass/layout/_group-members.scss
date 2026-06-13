@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Group Members cards
+   Responsive replacement for the old fixed-width <table> layout.
+   Desktop: photo left, text right (matches the previous look).
+   Phones (<= 600px): photo centered on top, details stacked below.
+   ========================================================================== */
+
+.member-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5em;
+  margin: 1.5em 0;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75em;
+  }
+}
+
+.member-card__media {
+  flex-shrink: 0;
+  width: 180px;
+  text-align: center;
+
+  @media (max-width: 600px) {
+    width: auto;
+  }
+}
+
+.member-card__photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border: 1px solid var(--global-border-color, #ccc);
+  display: inline-block;
+}
+
+.member-card__role {
+  margin-top: 0.6em;
+  font-family: Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.member-card__body {
+  flex: 1 1 auto;
+  min-width: 0; /* allow long emails/addresses to wrap inside flex */
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
+.member-card__name {
+  font-family: Arial, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: #0066cc;
+  margin-bottom: 0.5em;
+}
+
+.member-card__info {
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  margin: 0.4em 0;
+  word-break: break-word;
+}
