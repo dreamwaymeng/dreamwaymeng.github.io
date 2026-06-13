@@ -17,7 +17,7 @@ redirect_from:
   <tr>
     <!-- 左侧照片区域 -->
     <td width="220" valign="top" align="center">
-      <img src="../images/profile.png" width="140" height="140" border="1" >
+      <img src="../images/linzy.jpg" width="140" height="140" border="1" >
       <br><br>
       <font size="4" face="Arial" ><b>Postdoc</b></font>
     </td>
@@ -26,9 +26,9 @@ redirect_from:
       <font size="4" face="Arial" color="#0066cc"><b>Zi-Yang Lin (林子阳)</b></font>
       <br><br>
       <font size="3" face="Arial">
-      <b>Interests:</b>
+      <b>Interests:</b> Effective field theory, Scattering theory, Exotic hadrons, Few-body system
       <br><br>
-      <b>Email:</b> xxx@example.com
+      <b>Email:</b> <a href="mailto:linzy@seu.edu.cn">linzy@seu.edu.cn</a>
       <br><br>
       <b>Office:</b> Tianjiabing Bld. Rm. N116
       <br><br>
