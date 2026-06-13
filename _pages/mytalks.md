@@ -11,6 +11,12 @@ redirect_from:
 
 ## 2026 🐴
 
+* :cn: 2026-04-20: The 1st Annual Conference on EicC @Qingdao, **Probing the Nature of \\(Z_c(3900)\\) at EicC: Clues to \\(DDD^*\\) Bound State** [Slides](../files/2026/eicc.pdf)
+
+* :cn: 2026-04-06: Seminar @Fudan, Shanghai, **Imprints of Confinement in the Hadron Spectrum: From the Cornell Model to the DeepQuark** [Slides](../files/2026/Fudan-LuMeng.pdf)
+
+* :cn: 2026-03-31: Seminar @SDU, Qingdao, **Imprints of Confinement in the Hadron Spectrum: From the Cornell Model to the DeepQuark** [Slides](../files/2026/SDU-QingDao-LuMeng.pdf)
+
 * :cn: 2026-02-03: 味物理讲座100期特别活动 @Sanya, **From the Cornell model to the DeepQuark** [Slides](https://indico.ihep.ac.cn/event/27733/contributions/210970/)
 * 
 

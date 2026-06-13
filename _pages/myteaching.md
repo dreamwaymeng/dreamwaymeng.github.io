@@ -10,9 +10,6 @@ redirect_from:
 {% include toc %}
 
 
-## 2025
-under_constructing...
+## 2026
 
-test attachment
-[attachment](../files/slides1.pdf)
-[attachment](../files/2506.20555v1.pdf)
+* **Fundamental Physics (Electromagnetics) 基础物理（电磁学）**, 2026 Spring
