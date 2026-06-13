@@ -18,7 +18,10 @@ main:
     url: /group_members/
 
   - title: "Talks"
-    url: /mytalks/    
+    url: /mytalks/
+
+  - title: "Seminar Notices"
+    url: /seminars/
 
   - title: "Teaching"
     url: /myteaching/    
