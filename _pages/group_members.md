@@ -69,7 +69,7 @@ redirect_from:
   <tr>
     <!-- 左侧照片区域 -->
     <td width="220" valign="top" align="center">
-      <img src="../images/profile.png" width="140" height="140" border="1" >
+      <img src="../images/cuiyy.jpg" width="140" height="140" border="1" >
       <br><br>
       <font size="4" face="Arial" ><b>PhD student</b></font>
     </td>
@@ -78,9 +78,9 @@ redirect_from:
       <font size="4" face="Arial" color="#0066cc"><b>Yu-Yue Cui (崔雨月)</b></font>
       <br><br>
       <font size="3" face="Arial">
-      <b>Interests:</b>
+      <b>Interests:</b> Hadronic molecular states, Hadron spectroscopy
       <br><br>
-      <b>Email:</b> xxx@example.com
+      <b>Email:</b> <a href="mailto:202320112301@hunnu.edu.cn">202320112301@hunnu.edu.cn</a>
       <br><br>
       <b>Office:</b> Tianjiabing Bld. Rm. xxx
       <br><br>
