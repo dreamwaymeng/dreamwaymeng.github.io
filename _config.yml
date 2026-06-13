@@ -34,7 +34,25 @@ author:
   employer         : "Southeast University"
   employer_url     : "https://www.seu.edu.cn/english/"
   # uri              : # URL
-  email            : "lmeng@seu.edu.cn" 
+  email            : "lmeng@seu.edu.cn"
+
+  # Custom quick links (shown in the sidebar). Add more entries as needed.
+  links:
+    - label: "Southeast University"
+      icon: "fas fa-fw fa-building-columns"
+      url: "https://www.seu.edu.cn/"
+    - label: "SEU School of Physics"
+      icon: "fas fa-fw fa-atom"
+      url: "https://physics.seu.edu.cn/"
+    - label: "Faculty Profile @SEU"
+      icon: "fas fa-fw fa-id-card"
+      url: "https://physics.seu.edu.cn/2025/0917/c29635a539901/page.htm"
+    - label: "Particle Data Group"
+      icon: "fas fa-fw fa-book"
+      url: "https://pdg.lbl.gov/"
+    - label: "Eearth Few-body Org."
+      icon: "fas fa-fw fa-users"
+      url: "https://x3872.xyz/"
 
   # Academic websites
   academia         : # URL

@@ -164,7 +164,15 @@
       {% endif %}
       {% if author.zhihu %}
       <li><a href="https://www.zhihu.com/people/{{ author.zhihu }}"><i class="fab fa-fw fa-zhihu icon-pad-right" aria-hidden="true"></i>Zhihu</a></li>
-      {% endif %}      
+      {% endif %}
+
+      <!-- Custom links -->
+      {% if author.links %}
+        <li class="author__section-label">{{ author.links_label | default: "Useful Links" }}</li>
+        {% for link in author.links %}
+          <li><a href="{{ link.url }}"{% if link.url contains '://' %} target="_blank" rel="noopener"{% endif %}><i class="{{ link.icon | default: 'fas fa-fw fa-link' }} icon-pad-right" aria-hidden="true"></i>{{ link.label }}</a></li>
+        {% endfor %}
+      {% endif %}
     </ul>
   </div>
 </div>

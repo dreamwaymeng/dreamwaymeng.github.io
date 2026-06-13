@@ -247,6 +247,17 @@
     white-space: nowrap;
   }
 
+  .author__section-label {
+    margin: 0.7em 0 0.4em;
+    padding-top: 0.7em;
+    border-top: 1px solid var(--global-border-color);
+    font-size: $type-size-6;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--global-text-color-light);
+  }
+
   a {
     display: block;
     margin-bottom: 5px;
