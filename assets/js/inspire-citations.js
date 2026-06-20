@@ -6,15 +6,12 @@
 (function() {
   'use strict';
 
-  console.log('[INSPIRE Citations] Script loaded');
-
   // Configuration
-  const CACHE_KEY = 'inspire_citations_cache_v7';
+  const CACHE_KEY_PREFIX = 'inspire_citations_cache_v8';
   const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
   const API_BASE = 'https://inspirehep.net/api/literature';
-  const AUTHOR_BAI = 'Lu.Meng.1';
-  const AUTHOR_ID = '1692520';
-  const AUTHOR_URL = `https://inspirehep.net/authors/${AUTHOR_ID}`;
+  const DEFAULT_AUTHOR_BAI = 'Lu.Meng.1';
+  const DEFAULT_AUTHOR_ID = '1692520';
 
   // Translation labels
   const TRANSLATIONS = {
@@ -70,6 +67,23 @@
 
   // Track current mode per container
   const containerModes = new WeakMap();
+
+  /**
+   * Read citation configuration from the container.
+   */
+  function getCitationConfig(container) {
+    const authorId = container.getAttribute('data-author-id') || DEFAULT_AUTHOR_ID;
+    const authorBai = container.getAttribute('data-author-bai') || DEFAULT_AUTHOR_BAI;
+    const authorUrl = container.getAttribute('data-author-url') ||
+      `https://inspirehep.net/authors/${authorId}`;
+
+    return {
+      authorId: authorId,
+      authorBai: authorBai,
+      authorUrl: authorUrl,
+      cacheKey: `${CACHE_KEY_PREFIX}_${authorBai}`
+    };
+  }
 
   /**
    * Format number with thousand separators
@@ -245,17 +259,17 @@
    * Fetch publications from INSPIRE-HEP API with optional type filter
    * @param {string} typeFilter - 'citable' or 'published'
    */
-  async function fetchPublications(typeFilter) {
+  async function fetchPublications(typeFilter, authorBai) {
     const fields = 'citation_count,citation_count_without_self_citations,publication_info,citeable';
     const size = 250;
 
     // Build query based on filter type
     let query;
     if (typeFilter === 'published') {
-      query = `a ${AUTHOR_BAI} AND tc published`;
+      query = `a ${authorBai} AND tc published`;
     } else {
       // citable - use tc citeable to match INSPIRE-HEP's definition
-      query = `a ${AUTHOR_BAI} AND tc citeable`;
+      query = `a ${authorBai} AND tc citeable`;
     }
 
     const url = `${API_BASE}?q=${encodeURIComponent(query)}&size=${size}&fields=${fields}`;
@@ -310,11 +324,11 @@
   /**
    * Fetch and calculate metrics for both modes
    */
-  async function fetchAllMetrics() {
+  async function fetchAllMetrics(authorBai) {
     // Fetch both citable and published papers in parallel
     const [citablePubs, publishedPubs] = await Promise.all([
-      fetchPublications('citable'),
-      fetchPublications('published')
+      fetchPublications('citable', authorBai),
+      fetchPublications('published', authorBai)
     ]);
 
     return {
@@ -327,15 +341,15 @@
   /**
    * Get cached data if still valid
    */
-  function getCachedData() {
+  function getCachedData(cacheKey, allowExpired) {
     try {
-      const cached = localStorage.getItem(CACHE_KEY);
+      const cached = localStorage.getItem(cacheKey);
       if (!cached) return null;
 
       const data = JSON.parse(cached);
       const age = Date.now() - data.timestamp;
 
-      if (age < CACHE_DURATION) {
+      if (allowExpired || age < CACHE_DURATION) {
         return data;
       }
     } catch (e) {
@@ -347,9 +361,9 @@
   /**
    * Save data to cache
    */
-  function setCachedData(data) {
+  function setCachedData(cacheKey, data) {
     try {
-      localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+      localStorage.setItem(cacheKey, JSON.stringify(data));
     } catch (e) {
       console.error('Error writing cache:', e);
     }
@@ -360,6 +374,7 @@
    */
   function renderSummary(metrics, lang, container, mode) {
     const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+    const config = getCitationConfig(container);
     const updateDate = formatDate(new Date(metrics.timestamp), lang);
 
     // Get metrics for current mode
@@ -422,7 +437,7 @@
           </div>
         </div>
         <div class="citations-footer">
-          <small>${t.dataSource} <a href="${AUTHOR_URL}" target="_blank" rel="noopener">${t.inspireLink}</a> | ${t.lastUpdated}: ${updateDate} | <a href="#" class="citations-refresh">${t.refresh}</a></small>
+          <small>${t.dataSource} <a href="${config.authorUrl}" target="_blank" rel="noopener">${t.inspireLink}</a> | ${t.lastUpdated}: ${updateDate} | <a href="#" class="citations-refresh">${t.refresh}</a></small>
         </div>
         ${histogramHtml}
       </div>
@@ -494,6 +509,7 @@
   async function loadCitations(container, forceRefresh) {
     const lang = container.getAttribute('data-lang') || 'en';
     const defaultMode = container.getAttribute('data-mode') || 'citable';
+    const config = getCitationConfig(container);
 
     // Get current mode or use default
     let mode = containerModes.get(container) || defaultMode;
@@ -501,7 +517,7 @@
 
     // Try to use cached data first (unless forcing refresh)
     if (!forceRefresh) {
-      const cached = getCachedData();
+      const cached = getCachedData(config.cacheKey, false);
       if (cached) {
         renderSummary(cached, lang, container, mode);
         return;
@@ -513,19 +529,19 @@
 
     try {
       // Fetch fresh data from API for both modes
-      const metrics = await fetchAllMetrics();
+      const metrics = await fetchAllMetrics(config.authorBai);
 
       // Cache the results
-      setCachedData(metrics);
+      setCachedData(config.cacheKey, metrics);
 
       // Render the summary
       renderSummary(metrics, lang, container, mode);
     } catch (error) {
       console.error('Error fetching citations:', error);
 
-      // Try to use stale cache as fallback
-      const staleCache = getCachedData();
-      if (staleCache && !forceRefresh) {
+      // Try stale cache as fallback when the API is unreachable.
+      const staleCache = getCachedData(config.cacheKey, true);
+      if (staleCache) {
         renderSummary(staleCache, lang, container, mode);
       } else {
         renderError(lang, container);
@@ -537,9 +553,7 @@
    * Initialize citation containers on page load
    */
   function initCitations() {
-    console.log('[INSPIRE Citations] Initializing...');
     const containers = document.querySelectorAll('#inspire-citations');
-    console.log('[INSPIRE Citations] Found', containers.length, 'container(s)');
     containers.forEach(function(container) {
       loadCitations(container, false);
     });

@@ -17,7 +17,7 @@ description              : &description "Lu Meng's academic portfolio"   # Updat
 url                      : https://dreamwaymeng.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "dreamwaymeng/dreamwaymeng.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -47,6 +47,9 @@ author:
     - label: "Faculty Profile @SEU"
       icon: "fas fa-fw fa-id-card"
       url: "https://physics.seu.edu.cn/2025/0917/c29635a539901/page.htm"
+    - label: "CPC Junior Editor Board"
+      icon: "fas fa-fw fa-pen-nib"
+      url: "https://cpc.ihep.ac.cn/news/EditorialBoard.htm"
     - label: "Particle Data Group"
       icon: "fas fa-fw fa-book"
       url: "https://pdg.lbl.gov/"
@@ -237,11 +240,9 @@ kramdown:
   enable_coderay: false
 
 
-# These settings control the types of collections used by the template
-# Collections removed - not currently in use
-
-
-# These settings control how pages and collections are included in the site
+# These settings control how pages and posts are included in the site.
+# Collection defaults from the original template were removed because this site
+# keeps its main content in _pages/.
 defaults:
   # _posts
   - scope:
@@ -261,41 +262,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-  # _teaching
-  - scope:
-      path: ""
-      type: teaching
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _publications
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: true
-      share: true
-      comment: true
-  # _talks
-  - scope:
-      path: ""
-      type: talks
-    values:
-      layout: talk
-      author_profile: true
-      share: true
 
 
 # Sass/SCSS

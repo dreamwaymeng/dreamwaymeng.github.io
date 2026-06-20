@@ -30,7 +30,7 @@ Theoretical hadron physics, hadron spectrum, hadronic interactions, effective fi
 I (L. Meng) was born in 1992 in Shandong, China. Since beginning my PhD, I have been studying hadron physics — with a focus on exotic states such as tetraquarks and pentaquarks. My research aims to uncover patterns in these exotic hadrons to better understand non-perturbative Quantum Chromodynamics (QCD)— especially the spontaneous breaking of chiral symmetry and color confinement. Although I am a theoretical physicist, I strongly favor close integration with the latest experimentalresults (e.g. those from the Beijing Electron-Positron Collider and the Large Hadron Collider experiments at CERN) and lattice QCD simulations (a numerical approach solving QCD numerically on a spacetime grid). Recently, I also begun exploring applications of deep learning in my research (AI4Science). 
 
 ## Publications 📑
-<div id="inspire-citations" data-author-id="1692520" data-lang="en" data-citations-by-year='{{ site.data.citations_by_year.citations | jsonify }}'></div>
+<div id="inspire-citations" data-author-id="1692520" data-author-bai="Lu.Meng.1" data-lang="en" data-citations-by-year='{{ site.data.citations_by_year.citations | jsonify }}'></div>
 
 See [full publication list](https://inspirehep.net/authors/1692520)
 
@@ -51,7 +51,8 @@ See [full publication list](https://inspirehep.net/authors/1692520)
 * **2015/10** PKU Outstanding Doctoral Dissertation
 
 
-## Peer review ⚖️
-* APS: `Phys.Rev.Lett.`, `Phys.Rev.D`
-* Journal from China: `Sci.Bull`,  `Chin.Phys.C`, `Chin.Phys.Lett.`, `Commun.Theor.Phys.`, `Chin.J.Phys.`
-* Others: `Phys.Lett.B`, `JHEP`,  `EPJC`, `EPJA`,  `Nucl.Phy.B`,  `Nucl.Phy.A`
+## Academic Service ⚖️
+* Junior Editorial Board, [Chinese Physics C](https://cpc.ihep.ac.cn/news/EditorialBoard.htm)
+* Referee for APS journals: `Phys.Rev.Lett.`, `Phys.Rev.D`
+* Referee for journals from China: `Sci.Bull`, `Front. of Phys.`, `Chin.Phys.C`, `Chin.Phys.Lett.`, `Commun.Theor.Phys.`, `Chin.J.Phys.`
+* Referee for other journals: `Phys.Lett.B`, `JHEP`,  `EPJC`, `EPJA`,  `Nucl.Phy.B`,  `Nucl.Phy.A`
