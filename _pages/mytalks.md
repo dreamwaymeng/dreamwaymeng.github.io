@@ -11,6 +11,8 @@ redirect_from:
 
 ## 2026 🐴
 
+* :cn: 2026-07-18: 中国物理学会高能物理分会第十二届全国会员代表大会暨学术年会 @Guangzhou (**大会报告 / Plenary Talk**), **强子物理与味物理理论研究进展 (Theoretical Progress in Hadron Physics and Flavor Physics)** [Slides](https://indico.ihep.ac.cn/event/28557/contributions/223303/)
+
 * :cn: 2026-04-20: The 1st Annual Conference on EicC @Qingdao, **Probing the Nature of \\(Z_c(3900)\\) at EicC: Clues to \\(DDD^*\\) Bound State** [Slides](../files/2026/eicc.pdf)
 
 * :cn: 2026-04-06: Seminar @Fudan, Shanghai, **Imprints of Confinement in the Hadron Spectrum: From the Cornell Model to the DeepQuark** [Slides](../files/2026/Fudan-LuMeng.pdf)
