@@ -11,6 +11,8 @@ redirect_from:
 
 ## 2026 🐴
 
+* :us: 2026-08-01: Lattice 2026 @College Park, USA (**Plenary Talk**), **Dealing with left-hand cuts in multi-hadron spectroscopy** [Slides](https://indico.global/event/16565/contributions/161050/)
+
 * :cn: 2026-07-18: 中国物理学会高能物理分会第十二届全国会员代表大会暨学术年会 @Guangzhou (**大会报告 / Plenary Talk**), **强子物理与味物理理论研究进展 (Theoretical Progress in Hadron Physics and Flavor Physics)** [Slides](https://indico.ihep.ac.cn/event/28557/contributions/223303/)
 
 * :cn: 2026-04-20: The 1st Annual Conference on EicC @Qingdao, **Probing the Nature of \\(Z_c(3900)\\) at EicC: Clues to \\(DDD^*\\) Bound State** [Slides](../files/2026/eicc.pdf)
